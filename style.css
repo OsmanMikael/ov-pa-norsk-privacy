@@ -1,0 +1,645 @@
+/* ==========================================
+   ØV PÅ NORSK – PERSONVERNSIDER
+   Felles design for alle fire språk
+   ========================================== */
+
+/* ==========================================
+   FARGER OG VARIABLER
+   ========================================== */
+
+:root {
+  color-scheme: light;
+
+  --norway-blue: #002868;
+  --norway-red: #ba0c2f;
+  --norway-white: #ffffff;
+
+  --background: #f1f5f9;
+  --surface: #ffffff;
+  --surface-secondary: #f8fafc;
+
+  --text: #1e293b;
+  --text-secondary: #475569;
+  --heading: #002868;
+  --link: #0056b3;
+
+  --border: #e2e8f0;
+
+  --shadow: 0 8px 30px rgba(0, 40, 104, 0.08);
+
+  --radius: 18px;
+  --max-width: 900px;
+}
+
+/* ==========================================
+     GRUNNLEGGENDE INNSTILLINGER
+     ========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--background);
+  color: var(--text);
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+     ARABISK – RTL
+     ========================================== */
+
+html[lang="ar"] body {
+  font-family: "Noto Sans Arabic", "Geeza Pro", Tahoma, Arial, sans-serif;
+
+  line-height: 2;
+}
+
+html[dir="rtl"] .privacy-document {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .privacy-section {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .document-heading {
+  text-align: right;
+}
+
+/* Nettadresser og e-post leses fra venstre */
+
+a[dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ==========================================
+     TOPPMENY
+     ========================================== */
+
+.site-header {
+  width: 100%;
+
+  padding: 28px 20px;
+
+  background: var(--norway-blue);
+  color: var(--norway-white);
+
+  border-bottom: 5px solid var(--norway-red);
+
+  text-align: center;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  text-align: center;
+}
+
+/* ==========================================
+     SPRÅKVELGER
+     ========================================== */
+
+.language-menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+.language-link {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 46px;
+
+  padding: 10px 18px;
+
+  border: 2px solid transparent;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #002868;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.language-link span {
+  font-size: 20px;
+}
+
+.language-link:hover {
+  background: #e8eef8;
+  color: #002868;
+
+  text-decoration: none;
+
+  transform: translateY(-2px);
+}
+
+.language-link.active {
+  background: var(--norway-red);
+  color: #ffffff;
+
+  border-color: #ffffff;
+}
+
+.language-link.active:hover {
+  background: #9f0928;
+  color: #ffffff;
+}
+
+/* ==========================================
+     HOVEDINNHOLD
+     ========================================== */
+
+.container {
+  flex: 1;
+
+  width: 100%;
+  max-width: var(--max-width);
+
+  margin: 36px auto;
+
+  padding: 0 20px;
+}
+
+.privacy-document {
+  width: 100%;
+
+  padding: 40px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+     DOKUMENTOVERSKRIFT
+     ========================================== */
+
+.document-heading {
+  margin-bottom: 30px;
+  padding-bottom: 26px;
+
+  border-bottom: 4px solid var(--norway-red);
+}
+
+h1 {
+  margin: 0 0 22px;
+
+  color: var(--heading);
+
+  font-size: 32px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* ==========================================
+     VERSJON OG OPPDATERINGSDATO
+     ========================================== */
+
+.document-meta {
+  padding: 16px 20px;
+
+  background: var(--surface-secondary);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.document-meta p {
+  margin: 4px 0;
+}
+
+/* ==========================================
+     PERSONVERNSEKSJONER
+     ========================================== */
+
+.privacy-section {
+  margin-bottom: 30px;
+  padding-bottom: 24px;
+
+  border-bottom: 1px solid var(--border);
+
+  scroll-margin-top: 24px;
+}
+
+.privacy-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  border-bottom: none;
+}
+
+.privacy-section h2 {
+  margin: 0 0 16px;
+
+  color: var(--heading);
+
+  font-size: 22px;
+  font-weight: 750;
+
+  line-height: 1.5;
+}
+
+.privacy-section p {
+  margin: 0 0 16px;
+}
+
+.privacy-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+     PUNKTLISTER – STØTTER LTR OG RTL
+     ========================================== */
+
+.privacy-section ul {
+  margin: 16px 0 22px;
+
+  padding-inline-start: 26px;
+  padding-inline-end: 0;
+
+  list-style-type: disc;
+}
+
+.privacy-section li {
+  margin-bottom: 9px;
+
+  padding-inline-start: 4px;
+}
+
+.privacy-section li::marker {
+  color: var(--norway-red);
+}
+
+/* ==========================================
+     LENKER
+     ========================================== */
+
+a {
+  color: var(--link);
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 4px;
+
+  border-radius: 4px;
+}
+
+/* ==========================================
+     FELLES STARTSIDE
+     ========================================== */
+
+.language-start {
+  text-align: center;
+
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.language-start h1 {
+  margin-bottom: 18px;
+}
+
+.language-start > p {
+  margin: 8px 0;
+
+  color: var(--text-secondary);
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.language-start .language-menu {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  max-width: 540px;
+
+  margin: 32px auto 0;
+}
+
+.language-start .language-link {
+  min-height: 64px;
+
+  background: var(--norway-blue);
+  color: #ffffff;
+
+  border: 2px solid var(--norway-blue);
+
+  font-size: 17px;
+}
+
+.language-start .language-link:hover {
+  background: var(--norway-red);
+  color: #ffffff;
+
+  border-color: var(--norway-red);
+}
+
+/* ==========================================
+     BUNNTEKST
+     ========================================== */
+
+.site-footer {
+  padding: 26px 20px 34px;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 0 0 6px;
+}
+
+.site-footer a {
+  color: var(--link);
+}
+
+/* ==========================================
+     NETTBRETT OG MOBIL
+     ========================================== */
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 24px 16px;
+  }
+
+  .brand {
+    font-size: 25px;
+  }
+
+  .container {
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+
+  .privacy-document {
+    padding: 28px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .privacy-section h2 {
+    font-size: 21px;
+  }
+}
+
+/* ==========================================
+     SMÅ MOBILSKJERMER
+     ========================================== */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .site-header {
+    padding: 22px 12px;
+  }
+
+  .brand {
+    font-size: 23px;
+  }
+
+  .language-menu {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    max-width: 360px;
+
+    margin-inline: auto;
+  }
+
+  .language-link {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 10px 8px;
+
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 18px auto;
+
+    padding: 0 12px;
+  }
+
+  .privacy-document {
+    padding: 22px 18px;
+
+    border-radius: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .privacy-section h2 {
+    font-size: 19px;
+  }
+
+  .document-meta {
+    padding: 12px 14px;
+
+    font-size: 13px;
+  }
+
+  .privacy-section {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+  }
+
+  .language-start > p {
+    font-size: 17px;
+  }
+
+  .language-start .language-menu {
+    gap: 10px;
+  }
+
+  .language-start .language-link {
+    min-height: 58px;
+
+    font-size: 15px;
+  }
+
+  .site-footer {
+    padding: 22px 12px;
+  }
+}
+
+/* ==========================================
+     MØRK MODUS
+     ========================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-secondary: #162033;
+
+    --text: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --heading: #bfdbfe;
+    --link: #93c5fd;
+
+    --border: #334155;
+
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .privacy-section li::marker {
+    color: #fb7185;
+  }
+}
+
+/* ==========================================
+     TILGJENGELIGHET – REDUSERT BEVEGELSE
+     ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .language-link {
+    transition: none;
+  }
+
+  .language-link:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+     UTSKRIFT
+     ========================================== */
+
+@media print {
+  :root {
+    color-scheme: light;
+
+    --background: #ffffff;
+    --surface: #ffffff;
+    --surface-secondary: #ffffff;
+
+    --text: #000000;
+    --text-secondary: #333333;
+    --heading: #000000;
+    --link: #000000;
+
+    --border: #cccccc;
+  }
+
+  body {
+    background: #ffffff;
+
+    font-size: 12pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .language-menu {
+    display: none;
+  }
+
+  .container {
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .privacy-document {
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .privacy-section h2 {
+    break-after: avoid;
+  }
+
+  a {
+    color: #000000;
+  }
+}
